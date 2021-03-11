@@ -4,9 +4,9 @@ import generatoreService from "../mbres/utils/utils";
 import cloudinary from "cloudinary";
 
 cloudinary.config({ 
-  cloud_name: 'dyefcp1cm', 
-  api_key: '681415113832627', 
-  api_secret: 'PCPxZOyYUpuwxuFWJzpFlCJ56A8' 
+  cloud_name: process.env.CLOUDINARY_API_NAME, 
+  api_key: process.env.CLOUDINARY_API_KEY, 
+  api_secret: process.env.CLOUDINARY_API_SECRET 
 });
 
 exports.handler = async (event, context) => {
