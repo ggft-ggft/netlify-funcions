@@ -26,6 +26,11 @@
     "devold": "netlify-lambda serve functions",
     "dev": "netlify-lambda serve --config ./webpack.functions.js functions",
     "build": "netlify-lambda build functions",
-    "build-externals": "netlify-lambda build --config ./webpack.functions.js functions"
+    "build-externals": "netlify-lambda build --config ./webpack.functions.js functions",
+    "start:lambda": "netlify-lambda serve --config ./webpack.functions.due.js functions",
+    "build:lambda": "netlify-lambda build --config ./webpack.functions.due.js functions"
+  },
+  "devDependencies": {
+    "webpack-node-externals": "^2.5.2"
   }
 }

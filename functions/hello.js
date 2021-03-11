@@ -103,8 +103,21 @@ exports.handler = async (event, context) => {
   /* cloudinary.v2.uploader.upload("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==", 
     function(error, result) {console.log(result, error); }); */
 
-  return {
-    statusCode: 200,
-    body: `Hello, ${name} \r\n ${filename} \r\n ${base64ImageOutput}`,
-  };
+
+    if(payload?.id === 'immagine') {
+        return {
+          statusCode: 200,
+          headers: {
+            'Content-type': 'image/png'
+          },
+          body: base64ImageOutput,
+          isBase64Encoded: true
+        }
+    }else {
+      return {
+        statusCode: 200,
+        body: `Hello, ${name} \r\n ${filename} \r\n ${base64ImageOutput}`,
+      };
+    }
+
 };
