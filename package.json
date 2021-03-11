@@ -16,6 +16,7 @@
   "homepage": "https://github.com/ggft-ggft/netlify-funcions#readme",
   "dependencies": {
     "canvas": "^2.7.0",
+    "cloudinary": "^1.25.0",
     "fabric": "^4.3.1",
     "netlify-lambda": "^2.0.3",
     "querystring": "^0.2.1"
@@ -23,6 +24,7 @@
   "scripts": {
     "devold": "netlify-lambda serve functions",
     "dev": "netlify-lambda serve --config ./webpack.functions.js functions",
-    "build": "netlify-lambda build functions"
+    "buildold": "netlify-lambda build functions",
+    "build": "netlify-lambda build --config ./webpack.functions.js functions"
   }
 }

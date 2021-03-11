@@ -20,7 +20,8 @@ function getDateHash() {
   let year = date_ob.getFullYear();
   let hours = date_ob.getHours();
   let minutes = date_ob.getMinutes();
-  let result = `-${year}${month}${date}-${hours}${minutes}`;
+  let seconds = date_ob.getSeconds();
+  let result = `-${year}${month}${date}-${hours}${minutes}${seconds}`;
   return result;
 }
 
