@@ -25,7 +25,7 @@
   "scripts": {
     "devold": "netlify-lambda serve functions",
     "dev": "netlify-lambda serve --config ./webpack.functions.js functions",
-    "buildold": "netlify-lambda build functions",
-    "build": "netlify-lambda build --config ./webpack.functions.js functions"
+    "build": "netlify-lambda build functions",
+    "build-externals": "netlify-lambda build --config ./webpack.functions.js functions"
   }
 }
