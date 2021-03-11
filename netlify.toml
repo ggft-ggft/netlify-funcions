@@ -1,4 +1,3 @@
 [build]
-  command = "echo 'SONO IOOOOOO - - - - - - - - - -- - - -  - - --  - -- - - - -- - - - --  -- - context'"
   command = "npm run build:lambda"
   functions = ".netlify/functions/"
