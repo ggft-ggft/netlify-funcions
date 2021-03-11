@@ -15,7 +15,7 @@
   },
   "homepage": "https://github.com/ggft-ggft/netlify-funcions#readme",
   "dependencies": {
-    "netlify-lambda": "^2.0.3",
+    "netlify-lambda": "^2.0.3"
   },
   "scripts": {
     "devold": "netlify-lambda serve functions",
