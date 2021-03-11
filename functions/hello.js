@@ -2,6 +2,11 @@ import { fabric } from "fabric";
 import canvasDimensions from "../mbres/constants/dimensions";
 import generatoreService from "../mbres/utils/utils";
 import cloudinary from "cloudinary";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+console.log("ENV", process.env.CLOUDINARY_API_NAME, process.env.CLOUDINARY_API_KEY, process.env.CLOUDINARY_API_SECRET);
 
 cloudinary.config({ 
   cloud_name: process.env.CLOUDINARY_API_NAME, 
