@@ -1,0 +1,14 @@
+{
+    "name": "functions",
+    "version": "1.0.0",
+    "description": "",
+    "main": "generate.js",
+    "scripts": {},
+    "author": "",
+    "dependencies": {
+        "canvas": "^2.7.0",
+        "cloudinary": "^1.25.0",
+        "dotenv": "^8.2.0",
+        "fabric": "^4.3.1"
+    }
+}
