@@ -2,8 +2,7 @@
     "name": "functions",
     "version": "1.0.0",
     "description": "",
-    "main": "generate.js",
-    "scripts": {},
+    "main": "generate.js",    
     "author": "",
     "dependencies": {
         "canvas": "^2.7.0",
