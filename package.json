@@ -2,7 +2,7 @@
   "name": "netlify-funcions",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",  
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ggft-ggft/netlify-funcions.git"
@@ -15,10 +15,14 @@
   },
   "homepage": "https://github.com/ggft-ggft/netlify-funcions#readme",
   "dependencies": {
-    "netlify-lambda": "^2.0.3"
+    "canvas": "^2.7.0",
+    "fabric": "^4.3.1",
+    "netlify-lambda": "^2.0.3",
+    "querystring": "^0.2.1"
   },
   "scripts": {
-    "dev": "netlify-lambda serve functions",
+    "devold": "netlify-lambda serve functions",
+    "dev": "netlify-lambda serve --config ./webpack.functions.js functions",
     "build": "netlify-lambda build functions"
   }
 }
