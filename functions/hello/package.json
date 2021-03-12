@@ -1,0 +1,12 @@
+{
+    "name": "hello",
+    "version": "1.0.0",
+    "main": "hello.js",
+    "license": "MIT",
+    "dependencies": {
+        "canvas": "^2.7.0",
+        "cloudinary": "^1.25.0",
+        "dotenv": "^8.2.0",
+        "fabric": "^4.3.1"
+    }
+  }
