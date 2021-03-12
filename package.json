@@ -29,7 +29,7 @@
     "build-externals": "netlify-lambda build --config ./webpack.functions.js functions",
     "start:lambda": "netlify-lambda serve --config ./webpack.functions.due.js functions",
     "build": "npm-run-all build:*",
-    "build:libs":"sudo apt-get install build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev",
+    "build:libs":"sudo yum install gcc-c++ cairo-devel pango-devel libjpeg-turbo-devel giflib-devel",
     "build:lambda": "netlify-lambda build --config ./webpack.functions.due.js functions",
     "build-copy-lib": "cp ./lib/* ./.netlify/functions"
   },
