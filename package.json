@@ -29,7 +29,7 @@
     "build-externals": "netlify-lambda build --config ./webpack.functions.js functions",
     "start:lambda": "netlify-lambda serve --config ./webpack.functions.due.js functions",
     "build": "npm-run-all build:*",
-    "build:libs":"pkgin install cairo pango pkg-config xproto renderproto kbproto xextproto",
+    "build:libs":"doas pkg_add cairo pango png jpeg giflib",
     "build:lambda": "netlify-lambda build --config ./webpack.functions.due.js functions",
     "build-copy-lib": "cp ./lib/* ./.netlify/functions"
   },
