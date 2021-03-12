@@ -26,7 +26,7 @@
     "build": "NODE_ENV=production npm-run-all build:*",
     "build:functions-install-dependencies": "cd functions; for i in */; do cd ${i%/}; yarn; cd ..; done;",
     "build:zip-functions": "cd functions; for i in */; do zip -r \"../functions/${i%/}.zip\" \"$i\"; done;",
-    "build:copy-single-functions": "cp ./functions/*.js ./functions"
+    "build-copy-single-functions": "cp ./functions/*.js ./functions"
   },
   "devDependencies": {
     "webpack-node-externals": "^2.5.2"
