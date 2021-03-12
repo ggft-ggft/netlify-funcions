@@ -14,7 +14,8 @@
     "url": "https://github.com/ggft-ggft/netlify-funcions/issues"
   },
   "homepage": "https://github.com/ggft-ggft/netlify-funcions#readme",
-  "dependencies": {    
+  "dependencies": {
+    "fabric": "^4.3.1",
     "netlify-lambda": "^2.0.3",
     "npm-run-all": "^4.1.5"
   },
