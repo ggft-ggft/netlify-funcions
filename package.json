@@ -29,8 +29,8 @@
     "build-externals": "netlify-lambda build --config ./webpack.functions.js functions",
     "start:lambda": "netlify-lambda serve --config ./webpack.functions.due.js functions",
     "build": "npm-run-all build:*",
-    "build:lambda": "netlify-lambda build functions",    
-    "build:copy-lib": "mkdir -p ./.netlify/lib && cp ./lib/* ./.netlify/lib/"
+    "build:lambda": "netlify-lambda build --config ./webpack.functions.due.js functions",    
+    "build:copy-lib": "mkdir -p ./.netlify/lib && cp ./lib/* ./.netlify/"
   },
   "devDependencies": {
     "webpack-node-externals": "^2.5.2"
