@@ -30,7 +30,7 @@ exports.handler = async (event, context) => {
     generatoreService.getDateHash();
 
   //importazione font custom
-  fabric.nodeCanvas.registerFont(__dirname +
+ /*  fabric.nodeCanvas.registerFont(__dirname +
     "mbres/assets/fonts/LibreBaskerville-Regular.ttf",
     {
       family: "LibreBaskerville",
@@ -53,7 +53,7 @@ exports.handler = async (event, context) => {
       weight: "regular",
       style: "italic",
     }
-  );
+  ); */
 
   var canvas = new fabric.StaticCanvas(null, {
     width: canvasDimensions.canvasWidth,
