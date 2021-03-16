@@ -30,24 +30,24 @@ exports.handler = async (event, context) => {
     generatoreService.getDateHash();
 
   //importazione font custom
-  fabric.nodeCanvas.registerFont(
-    "./fanculo/assets/fonts/LibreBaskerville-Regular.ttf",
+  fabric.nodeCanvas.registerFont(__dirname +
+    "./mbres/assets/fonts/LibreBaskerville-Regular.ttf",
     {
       family: "LibreBaskerville",
       weight: "regular",
       style: "normal",
     }
   );
-  fabric.nodeCanvas.registerFont(
-    "./fanculo/assets/fonts/LibreBaskerville-Bold.ttf",
+  fabric.nodeCanvas.registerFont(__dirname +
+    "./mbres/assets/fonts/LibreBaskerville-Bold.ttf",
     {
       family: "LibreBaskerville",
       weight: "bold",
       style: "normal",
     }
   );
-  fabric.nodeCanvas.registerFont(
-    "./fanculo/assets/fonts/LibreBaskerville-Italic.ttf",
+  fabric.nodeCanvas.registerFont(__dirname + 
+    "./mbres/assets/fonts/LibreBaskerville-Italic.ttf",
     {
       family: "LibreBaskerville",
       weight: "regular",
