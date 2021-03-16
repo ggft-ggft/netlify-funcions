@@ -30,8 +30,8 @@
     "start:lambda": "netlify-lambda serve --config ./webpack.functions.due.js functions",
     "build": "npm-run-all build:*",
     "build:lambda": "netlify-lambda build --config ./webpack.functions.due.js functions",    
-    "build:copy-lib": "cp ./lib/* /var/task",
-    "build:copy-lib2": "cp ./lib/* /var/task/lib"
+    "build-copy-lib": "cp ./lib/* /var/task",    
+    "build:info": "pwd"
   },
   "devDependencies": {
     "webpack-node-externals": "^2.5.2"
