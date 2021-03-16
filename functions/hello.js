@@ -31,7 +31,7 @@ exports.handler = async (event, context) => {
 
   //importazione font custom
   fabric.nodeCanvas.registerFont(__dirname +
-    "./mbres/assets/fonts/LibreBaskerville-Regular.ttf",
+    "mbres/assets/fonts/LibreBaskerville-Regular.ttf",
     {
       family: "LibreBaskerville",
       weight: "regular",
@@ -39,7 +39,7 @@ exports.handler = async (event, context) => {
     }
   );
   fabric.nodeCanvas.registerFont(__dirname +
-    "./mbres/assets/fonts/LibreBaskerville-Bold.ttf",
+    "mbres/assets/fonts/LibreBaskerville-Bold.ttf",
     {
       family: "LibreBaskerville",
       weight: "bold",
@@ -47,7 +47,7 @@ exports.handler = async (event, context) => {
     }
   );
   fabric.nodeCanvas.registerFont(__dirname + 
-    "./mbres/assets/fonts/LibreBaskerville-Italic.ttf",
+    "mbres/assets/fonts/LibreBaskerville-Italic.ttf",
     {
       family: "LibreBaskerville",
       weight: "regular",
