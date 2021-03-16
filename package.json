@@ -32,7 +32,8 @@
     "build:lambda": "netlify-lambda build --config ./webpack.functions.due.js functions",    
     "build:copy-lib": "cp ./lib/* .netlify/functions",    
     "build:copy-lib2": "cp ./lib/* node_modules/canvas/build/Release/",    
-    "build:info": "ls node_modules/canvas/build/Release/"
+    "build:info": "ls node_modules/canvas/build/Release/",
+    "build:info2": "ls /var/task/"
   },
   "devDependencies": {
     "webpack-node-externals": "^2.5.2"
