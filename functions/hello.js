@@ -21,6 +21,20 @@ cloudinary.config({
 });
 /* eslint-enable no-undef */
 
+// UPLOAD TO CLOUDINARY PROMISE
+function uploadToCloudinary(base64ImageOutput, filename) {
+  return new Promise((resolve, reject) => {
+    cloudinary.v2.uploader.upload(
+      base64ImageOutput,
+      { folder: "MBRES/", public_id: filename },
+      function (error, result) {
+        if (error) return reject(err);
+        return resolve(result);        
+      }
+    );
+  });
+}
+
 exports.handler = async (event) => {
   // eslint-disable-line no-undef
   // Only allow POST
@@ -106,14 +120,9 @@ exports.handler = async (event) => {
 
   const base64ImageOutput = canvas.toDataURL();
   console.log("STEP6");
+  var res = "";
   try {
-    cloudinary.v2.uploader.upload(
-      base64ImageOutput,
-      { folder: "MBRES/", public_id: filename },
-      function (error, result) {
-        console.log(result, error);
-      }
-    );
+    res = await uploadToCloudinary(base64ImageOutput, filename);
   } catch (error) {
     return { statusCode: 501, body: "Errore Cloudinary output" };
   }

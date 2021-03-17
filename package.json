@@ -35,7 +35,8 @@
     "build:copy-lib2": "cp ./lib/* node_modules/canvas/build/Release/",
     "build:copy-lib3": "mv node_modules/canvas/build/Release/libpangoft2-1.0.so.0 node_modules/canvas/build/Release/libpangoft2-1.0.OLD",
     "build:copy-lib4": "cp ./canvasAMI/build/Release/libpangoft2-1.0.so.0 node_modules/canvas/build/Release/",    
-    "build:info": "ls node_modules/canvas/build/Release/"
+    "build:info": "ls node_modules/canvas/build/Release/",
+    "build:info2": "ls -la"
   },
   "devDependencies": {
     "webpack-node-externals": "^2.5.2"
