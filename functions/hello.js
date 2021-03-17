@@ -90,19 +90,14 @@ exports.handler = async (event, context) => {
   canvas.renderAll();
   const base64ImageOutput = canvas.toDataURL();
 
-  cloudinary.v2.uploader.upload(
-    base64ImageOutput,
-    {
-      callback : function (error, result) {
-        console.log(result, error);
-      },
-      public_id : `MBRES/${filename}`
-    }
-  );
+  const risultato = null;
+  const errore = null;
 
-  /* cloudinary.v2.uploader.upload("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==", 
-    function(error, result) {console.log(result, error); }); */
 
+  cloudinary.v2.uploader.upload(base64ImageOutput, 
+  { folder: "MBRES/", 
+    public_id: filename },
+  function(error, result) {console.log(result, error); });
 
     if(payload?.id === 'immagine') {
         return {
@@ -116,7 +111,7 @@ exports.handler = async (event, context) => {
     }else {
       return {
         statusCode: 200,
-        body: `Hello, ${name} \r\n ${filename} \r\n ${base64ImageOutput}`,
+        body: `Hello, ${risultato} ${errore} ${name} \r\n ${filename} \r\n ${base64ImageOutput}`,
       };
     }
 
