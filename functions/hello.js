@@ -6,12 +6,17 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-console.log("ENV", process.env.CLOUDINARY_API_NAME, process.env.CLOUDINARY_API_KEY, process.env.CLOUDINARY_API_SECRET);
+console.log(
+  "ENV",
+  process.env.CLOUDINARY_API_NAME,
+  process.env.CLOUDINARY_API_KEY,
+  process.env.CLOUDINARY_API_SECRET
+);
 
-cloudinary.config({ 
-  cloud_name: process.env.CLOUDINARY_API_NAME, 
-  api_key: process.env.CLOUDINARY_API_KEY, 
-  api_secret: process.env.CLOUDINARY_API_SECRET 
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_API_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
 exports.handler = async (event, context) => {
@@ -30,7 +35,7 @@ exports.handler = async (event, context) => {
     generatoreService.getDateHash();
 
   //importazione font custom
- /*  fabric.nodeCanvas.registerFont(__dirname +
+  /*  fabric.nodeCanvas.registerFont(__dirname +
     "mbres/assets/fonts/LibreBaskerville-Regular.ttf",
     {
       family: "LibreBaskerville",
@@ -54,11 +59,16 @@ exports.handler = async (event, context) => {
       style: "italic",
     }
   ); */
-
-  var canvas = new fabric.StaticCanvas(null, {
-    width: canvasDimensions.canvasWidth,
-    height: canvasDimensions.canvasHeight,
-  });
+  var canvas;
+  console.log("DIRNAME:: ", __dirname);
+  try {
+    canvas = new fabric.StaticCanvas(null, {
+      width: canvasDimensions.canvasWidth,
+      height: canvasDimensions.canvasHeight,
+    });
+  } catch (error) {
+    return { statusCode: 501, body: "Errore creazione canvas" };
+  }
 
   try {
     generatoreService.generateBackground(
@@ -87,32 +97,38 @@ exports.handler = async (event, context) => {
     return { statusCode: 501, body: "Errore title" };
   }
 
-  canvas.renderAll();
-  const base64ImageOutput = canvas.toDataURL();
+  try {
+    canvas.renderAll();
+    const base64ImageOutput = canvas.toDataURL();
+  } catch (error) {
+    return { statusCode: 501, body: "Errore render" };
+  }
 
-  const risultato = null;
-  const errore = null;
+  try {
+    cloudinary.v2.uploader.upload(
+      base64ImageOutput,
+      { folder: "MBRES/", public_id: filename },
+      function (error, result) {
+        console.log(result, error);
+      }
+    );
+  } catch (error) {
+    return { statusCode: 501, body: "Errore Cloudinary output" };
+  }
 
-
-  cloudinary.v2.uploader.upload(base64ImageOutput, 
-  { folder: "MBRES/", 
-    public_id: filename },
-  function(error, result) {console.log(result, error); });
-
-    if(payload?.id === 'immagine') {
-        return {
-          statusCode: 200,
-          headers: {
-            'Content-type': 'image/png'
-          },
-          body: base64ImageOutput,
-          isBase64Encoded: true
-        }
-    }else {
-      return {
-        statusCode: 200,
-        body: `Hello, ${risultato} ${errore} ${name} \r\n ${filename} \r\n ${base64ImageOutput}`,
-      };
-    }
-
+  if (payload?.id === "immagine") {
+    return {
+      statusCode: 200,
+      headers: {
+        "Content-type": "image/png",
+      },
+      body: base64ImageOutput,
+      isBase64Encoded: true,
+    };
+  } else {
+    return {
+      statusCode: 200,
+      body: `Hello, ${risultato} ${errore} ${name} \r\n ${filename} \r\n ${base64ImageOutput}`,
+    };
+  }
 };
