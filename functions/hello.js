@@ -36,34 +36,34 @@ exports.handler = async (event) => { // eslint-disable-line no-undef
     (payload?.id || generatoreService.makeid(10)) +
     generatoreService.getDateHash();
 
+
+  console.log("DIRNAME:: ", __dirname); // eslint-disable-line no-undef
+  console.log("TASK ROOT:: ", process.env.LAMBDA_TASK_ROOT); // eslint-disable-line no-undef
   //importazione font custom
-  /*  fabric.nodeCanvas.registerFont(__dirname +
-    "mbres/assets/fonts/LibreBaskerville-Regular.ttf",
+   fabric.nodeCanvas.registerFont(
+    process.env.LAMBDA_TASK_ROOT + "/fonts/LibreBaskerville-Regular.ttf",
     {
       family: "LibreBaskerville",
       weight: "regular",
       style: "normal",
     }
   );
-  fabric.nodeCanvas.registerFont(__dirname +
-    "mbres/assets/fonts/LibreBaskerville-Bold.ttf",
+  fabric.nodeCanvas.registerFont(process.env.LAMBDA_TASK_ROOT + "/fonts/LibreBaskerville-Bold.ttf",
     {
       family: "LibreBaskerville",
       weight: "bold",
       style: "normal",
     }
   );
-  fabric.nodeCanvas.registerFont(__dirname + 
-    "mbres/assets/fonts/LibreBaskerville-Italic.ttf",
+  fabric.nodeCanvas.registerFont(process.env.LAMBDA_TASK_ROOT + "/fonts/LibreBaskerville-Italic.ttf",
     {
       family: "LibreBaskerville",
       weight: "regular",
       style: "italic",
     }
-  ); */
+  );
   var canvas;
-  console.log("DIRNAME:: ", __dirname); // eslint-disable-line no-undef
-  console.log("TASK ROOT:: ", process.env.LAMBDA_TASK_ROOT); // eslint-disable-line no-undef
+  
   try {
     canvas = new fabric.StaticCanvas(null, {
       width: canvasDimensions.canvasWidth,
