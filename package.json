@@ -16,7 +16,7 @@
   "homepage": "https://github.com/ggft-ggft/netlify-funcions#readme",
   "dependencies": {
     "bufferutil": "^4.0.3",
-    "canvas": "^2.7.0",
+    "canvas": "2.6.0",
     "cloudinary": "^1.25.0",
     "dotenv": "^8.2.0",
     "fabric": "^4.3.1",
@@ -35,9 +35,7 @@
     "build--copy-lib": "cp ./lib/* .netlify/functions",
     "build:copy-lib2": "cp ./lib/* node_modules/canvas/build/Release/",
     "build:copy-lib3": "mv node_modules/canvas/build/Release/libpangoft2-1.0.so.0 node_modules/canvas/build/Release/libpangoft2-1.0.OLD",
-    "build--copy-lib4": "cp ./canvasAMI/canvas/Release/libpangoft2-1.0.so.0 node_modules/canvas/build/Release/",
-    "build:infopre": "ls ./canvasAMI",
-    "build:infopre2": "ls canvasAMI",
+    "build--copy-lib4": "cp ./canvasAMI/build/Release/libpangoft2-1.0.so.0 node_modules/canvas/build/Release/",    
     "build:info": "ls node_modules/canvas/build/Release/"
   },
   "devDependencies": {
