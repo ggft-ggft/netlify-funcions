@@ -6,11 +6,12 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
+/* eslint-disable no-undef */
 console.log(
   "ENV",
-  process.env.CLOUDINARY_API_NAME,
-  process.env.CLOUDINARY_API_KEY,
-  process.env.CLOUDINARY_API_SECRET
+  process.env.CLOUDINARY_API_NAME, 
+  process.env.CLOUDINARY_API_KEY, 
+  process.env.CLOUDINARY_API_SECRET 
 );
 
 cloudinary.config({
@@ -18,8 +19,9 @@ cloudinary.config({
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
+/* eslint-enable no-undef */
 
-exports.handler = async (event, context) => {
+exports.handler = async (event) => { // eslint-disable-line no-undef
   // Only allow POST
   if (event.httpMethod !== "POST") {
     return { statusCode: 405, body: "Method Not Allowed" };
@@ -60,7 +62,7 @@ exports.handler = async (event, context) => {
     }
   ); */
   var canvas;
-  console.log("DIRNAME:: ", __dirname);
+  console.log("DIRNAME:: ", __dirname); // eslint-disable-line no-undef
   try {
     canvas = new fabric.StaticCanvas(null, {
       width: canvasDimensions.canvasWidth,
@@ -99,11 +101,12 @@ exports.handler = async (event, context) => {
 
   try {
     canvas.renderAll();
-    const base64ImageOutput = canvas.toDataURL();
   } catch (error) {
     return { statusCode: 501, body: "Errore render" };
   }
-
+  
+  const base64ImageOutput = canvas.toDataURL();
+  
   try {
     cloudinary.v2.uploader.upload(
       base64ImageOutput,
@@ -128,7 +131,7 @@ exports.handler = async (event, context) => {
   } else {
     return {
       statusCode: 200,
-      body: `Hello, ${risultato} ${errore} ${name} \r\n ${filename} \r\n ${base64ImageOutput}`,
+      body: `Hello, ${name} \r\n ${filename} \r\n ${base64ImageOutput}`
     };
   }
 };
