@@ -3,6 +3,7 @@ import canvasDimensions from "./mbres/constants/dimensions";
 import generatoreService from "./mbres/utils/utils";
 import cloudinary from "cloudinary";
 import dotenv from "dotenv";
+import path from "path"
 
 dotenv.config();
 
@@ -54,17 +55,17 @@ exports.handler = async (event) => {
   console.log("DIRNAME:: ", __dirname); // eslint-disable-line no-undef
   console.log("TASK ROOT:: ", process.env.LAMBDA_TASK_ROOT); // eslint-disable-line no-undef
   //importazione font custom
-  fabric.nodeCanvas.registerFont("mbres/assets/fonts/LibreBaskerville-Regular.ttf", {
+  fabric.nodeCanvas.registerFont(path.resolve("./fonts/LibreBaskerville-Regular.ttf"), {
     family: "LibreBaskerville",
     weight: "regular",
     style: "normal",
   });
-  fabric.nodeCanvas.registerFont("mbres/assets/onts/LibreBaskerville-Bold.ttf", {
+  fabric.nodeCanvas.registerFont(path.resolve("mbres/assets/onts/LibreBaskerville-Bold.ttf"), {
     family: "LibreBaskerville",
     weight: "bold",
     style: "normal",
   });
-  fabric.nodeCanvas.registerFont("mbres/assets/fonts/LibreBaskerville-Italic.ttf", {
+  fabric.nodeCanvas.registerFont(path.resolve("mbres/assets/fonts/LibreBaskerville-Italic.ttf"), {
     family: "LibreBaskerville",
     weight: "regular",
     style: "italic",
