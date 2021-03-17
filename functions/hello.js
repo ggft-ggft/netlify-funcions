@@ -63,6 +63,7 @@ exports.handler = async (event) => { // eslint-disable-line no-undef
   ); */
   var canvas;
   console.log("DIRNAME:: ", __dirname); // eslint-disable-line no-undef
+  console.log("TASK ROOT:: ", process.env.LAMBDA_TASK_ROOT); // eslint-disable-line no-undef
   try {
     canvas = new fabric.StaticCanvas(null, {
       width: canvasDimensions.canvasWidth,
@@ -71,7 +72,7 @@ exports.handler = async (event) => { // eslint-disable-line no-undef
   } catch (error) {
     return { statusCode: 501, body: "Errore creazione canvas" };
   }
-
+  console.log("STEP1");
   try {
     generatoreService.generateBackground(
       payload.tipologie,
@@ -81,24 +82,29 @@ exports.handler = async (event) => { // eslint-disable-line no-undef
   } catch (error) {
     return { statusCode: 501, body: "Errore background" };
   }
+
+  console.log("STEP2");
   try {
     generatoreService.generateBottom(payload.anno, canvas, payload.tipologie);
   } catch (error) {
     return { statusCode: 501, body: "Errore bottom" };
   }
 
+  console.log("STEP3");
   try {
     generatoreService.generateLogo(canvas, payload.tipologie);
   } catch (error) {
     return { statusCode: 501, body: "Errore logo" };
   }
 
+  console.log("STEP4");
   try {
     generatoreService.generateTitle(payload.titolo, canvas, payload.tipologie);
   } catch (error) {
     return { statusCode: 501, body: "Errore title" };
   }
 
+  console.log("STEP5");
   try {
     canvas.renderAll();
   } catch (error) {
@@ -106,7 +112,7 @@ exports.handler = async (event) => { // eslint-disable-line no-undef
   }
   
   const base64ImageOutput = canvas.toDataURL();
-  
+  console.log("STEP6");
   try {
     cloudinary.v2.uploader.upload(
       base64ImageOutput,
@@ -118,7 +124,7 @@ exports.handler = async (event) => { // eslint-disable-line no-undef
   } catch (error) {
     return { statusCode: 501, body: "Errore Cloudinary output" };
   }
-
+  console.log("STEP7");
   if (payload?.id === "immagine") {
     return {
       statusCode: 200,
