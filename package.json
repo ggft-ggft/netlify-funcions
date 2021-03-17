@@ -29,8 +29,8 @@
     "build-externals": "netlify-lambda build --config ./webpack.functions.js functions",
     "start:lambda": "netlify-lambda serve --config ./webpack.functions.due.js functions",
     "build": "npm-run-all build:*",
-    "build:lambda": "netlify-lambda build --config ./webpack.functions.due.js functions",
-    "build:copy-lib": "cp ./lib/* .netlify/functions",
+    "build:lambda": "netlify-lambda build --config ./webpack.functions.js functions",
+    "build--copy-lib": "cp ./lib/* .netlify/functions",
     "build:copy-lib2": "cp ./lib/* node_modules/canvas/build/Release/",
     "build:info": "ls node_modules/canvas/build/Release/"    
   },
