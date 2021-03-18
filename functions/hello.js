@@ -3,7 +3,6 @@ import canvasDimensions from "./mbres/constants/dimensions";
 import generatoreService from "./mbres/utils/utils";
 import cloudinary from "cloudinary";
 import dotenv from "dotenv";
-import path from "path"
 
 dotenv.config();
 
