@@ -55,17 +55,17 @@ exports.handler = async (event) => {
   console.log("DIRNAME:: ", __dirname); // eslint-disable-line no-undef
   console.log("TASK ROOT:: ", process.env.LAMBDA_TASK_ROOT); // eslint-disable-line no-undef
   //importazione font custom
-  fabric.nodeCanvas.registerFont(path.resolve("node_modules/canvas/build/Release/LibreBaskerville-Regular.ttf"), {
+  fabric.nodeCanvas.registerFont(path.resolve("LibreBaskerville-Regular.ttf"), {
     family: "LibreBaskerville",
     weight: "regular",
     style: "normal",
   });
-  fabric.nodeCanvas.registerFont(path.resolve("node_modules/canvas/build/Release/LibreBaskerville-Bold.ttf"), {
+  fabric.nodeCanvas.registerFont(path.resolve("LibreBaskerville-Bold.ttf"), {
     family: "LibreBaskerville",
     weight: "bold",
     style: "normal",
   });
-  fabric.nodeCanvas.registerFont(path.resolve("node_modules/canvas/build/Release/LibreBaskerville-Italic.ttf"), {
+  fabric.nodeCanvas.registerFont(path.resolve("LibreBaskerville-Italic.ttf"), {
     family: "LibreBaskerville",
     weight: "regular",
     style: "italic",
