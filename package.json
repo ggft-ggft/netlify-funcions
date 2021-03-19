@@ -20,8 +20,10 @@
     "cloudinary": "^1.25.0",
     "dotenv": "^8.2.0",
     "fabric": "^4.3.1",
+    "fs": "^0.0.1-security",
     "netlify-lambda": "^2.0.3",
     "npm-run-all": "^4.1.5",
+    "path": "^0.12.7",
     "utf-8-validate": "^5.0.4"
   },
   "scripts": {
@@ -38,13 +40,9 @@
     "build:copy-lib5": "cp ./fonts/* /tmp",
     "build-info": "ls node_modules/canvas/build/Release/",
     "build:info2": "chmod 644 $(find . -type f)",
-    "build:info22": "chmod 755 $(find . -type d)"    
+    "build:info22": "chmod 755 $(find . -type d)"
   },
   "devDependencies": {
     "webpack-node-externals": "^2.5.2"
   }
 }
-
-
-
-
