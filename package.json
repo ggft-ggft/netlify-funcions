@@ -42,6 +42,7 @@
     "build:info22": "chmod 755 $(find . -type d)"
   },
   "devDependencies": {
+    "copy-webpack-plugin": "6.2.1",
     "webpack-node-externals": "^2.5.2"
   }
 }
