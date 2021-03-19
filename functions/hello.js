@@ -58,11 +58,11 @@ exports.handler = async (event) => {
   
   console.log("resolve::::", path.resolve("./fonts/LibreBaskerville-Regular.ttf"));
 
-  /* fabric.nodeCanvas.registerFont(process.env.FONTCONFIG_PATH + "/LibreBaskerville-Regular.ttf", {
+  fabric.nodeCanvas.registerFont(path.resolve("./fonts/LibreBaskerville-Regular.ttf") , {
     family: "LibreBaskerville",
     weight: "regular",
     style: "normal",
-  }); */
+  });
 
   /* fabric.nodeCanvas.registerFont(process.env.FONTCONFIG_PATH + "LibreBaskerville-Bold.ttf", {
     family: "LibreBaskerville",
