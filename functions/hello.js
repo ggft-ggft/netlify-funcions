@@ -56,7 +56,7 @@ exports.handler = async (event) => {
   console.log("TASK ROOT:: ", process.env.LAMBDA_TASK_ROOT); // eslint-disable-line no-undef
   //importazione font custom
   
-  console.log("resolve::::", path.resolve(__dirname));
+  console.log("resolve::::", path.resolve("./fonts/LibreBaskerville-Regular.ttf"));
 
   /* fabric.nodeCanvas.registerFont(process.env.FONTCONFIG_PATH + "/LibreBaskerville-Regular.ttf", {
     family: "LibreBaskerville",
