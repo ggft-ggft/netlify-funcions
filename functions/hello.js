@@ -56,9 +56,9 @@ exports.handler = async (event) => {
   console.log("TASK ROOT:: ", process.env.LAMBDA_TASK_ROOT); // eslint-disable-line no-undef
   //importazione font custom
   
-  const font1 = path.resolve("./fonts/LibreBaskerville-Regular.ttf");
-  const font2 = path.resolve("./fonts/LibreBaskerville-Bold.ttf");
-  const font3 = path.resolve("./fonts/LibreBaskerville-Italic.ttf");
+  const font1 = path.resolve("./src/fonts/LibreBaskerville-Regular.ttf");
+  const font2 = path.resolve("./src/fonts/LibreBaskerville-Bold.ttf");
+  const font3 = path.resolve("./src/fonts/LibreBaskerville-Italic.ttf");
 
   console.log("resolve::::", font1, font2, font3);
 
