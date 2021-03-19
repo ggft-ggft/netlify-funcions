@@ -41,7 +41,8 @@
     "build-info": "ls node_modules/canvas/build/Release/",
     "build:info2": "chmod 644 $(find . -type f)",
     "build:info22": "chmod 755 $(find . -type d)",
-    "build:info3": "ls -l"
+    "build:info3": "ls -l",
+    "build:info4": "ls -l /opt/build/repo/.netlify/functions"
   },
   "devDependencies": {
     "webpack-node-externals": "^2.5.2"
