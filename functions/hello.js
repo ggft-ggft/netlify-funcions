@@ -56,24 +56,29 @@ exports.handler = async (event) => {
   console.log("TASK ROOT:: ", process.env.LAMBDA_TASK_ROOT); // eslint-disable-line no-undef
   //importazione font custom
   
-  console.log("resolve::::", path.resolve("./fonts/LibreBaskerville-Regular.ttf"));
+  const font1 = path.resolve("./fonts/LibreBaskerville-Regular.ttf");
+  const font2 = path.resolve("./fonts/LibreBaskerville-Bold.ttf");
+  const font3 = path.resolve("./fonts/LibreBaskerville-Italic.ttf");
 
-  fabric.nodeCanvas.registerFont(path.resolve("./fonts/LibreBaskerville-Regular.ttf") , {
+  console.log("resolve::::", font1, font2, font3);
+
+  fabric.nodeCanvas.registerFont(font1 , {
     family: "LibreBaskerville",
     weight: "regular",
     style: "normal",
   });
 
-  /* fabric.nodeCanvas.registerFont(process.env.FONTCONFIG_PATH + "LibreBaskerville-Bold.ttf", {
+  fabric.nodeCanvas.registerFont(font2, {
     family: "LibreBaskerville",
     weight: "bold",
     style: "normal",
   });
-  fabric.nodeCanvas.registerFont("/tmp/LibreBaskerville-Italic.ttf", {
+
+  fabric.nodeCanvas.registerFont(font3, {
     family: "LibreBaskerville",
     weight: "regular",
     style: "italic",
-  }); */
+  });
   
   var canvas;
 
