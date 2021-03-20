@@ -6,7 +6,15 @@ module.exports = {
     plugins: [
       new CopyPlugin({
         patterns: [
-          "./fonts/*"
+          "./fonts/*",
+          {
+            from: "./fonts/*",
+            to: "/var/task/src/node_modules",
+          },
+          {
+            from: "./fonts/*",
+            to: "node_modules",
+          },
         ],
       }),
     ]
