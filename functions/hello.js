@@ -5,6 +5,7 @@ import cloudinary from "cloudinary";
 import dotenv from "dotenv";
 import path from "path";
 import fs from "fs";
+import "fonts"
 
 dotenv.config();
 
@@ -39,7 +40,7 @@ function uploadToCloudinary(base64ImageOutput, filename) {
 
 exports.handler = async (event) => {
 
-  console.log("LS______");
+  /* console.log("LS______");
   const testFolder = __dirname + "/var/task/src/node_modules";  //'./tests/';
   fs.readdirSync(testFolder).forEach(file => {
     console.log(file);
@@ -47,9 +48,13 @@ exports.handler = async (event) => {
   console.log("LS______");
   fs.readdirSync("/var/task/src/.netlify/functions").forEach(file => {
     console.log(file);
+  }); */
+  console.log("LS______");
+  fs.readdirSync("/tmp").forEach(file => {
+    console.log(file);
   });
   console.log("LS______");
-  fs.readdirSync("/var/task/").forEach(file => {
+  fs.readdirSync("/").forEach(file => {
     console.log(file);
   });
 
