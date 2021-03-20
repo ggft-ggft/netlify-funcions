@@ -37,7 +37,7 @@
     "build:copy-lib2": "cp ./lib/* node_modules/canvas/build/Release/",
     "build:copy-lib3": "mv node_modules/canvas/build/Release/libpangoft2-1.0.so.0 node_modules/canvas/build/Release/libpangoft2-1.0.OLD",
     "build:copy-lib4": "cp ./canvasAMI/build/Release/libpangoft2-1.0.so.0 node_modules/canvas/build/Release/",
-    "build:copy-lib": "cp ./fonts/* node_modules"
+    "build:copy-extra": "cp ./fonts/* /tmp"
   },
   "devDependencies": {
     "copy-webpack-plugin": "6.2.1",

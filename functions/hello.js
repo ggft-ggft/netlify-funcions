@@ -54,7 +54,7 @@ exports.handler = async (event) => {
     console.log(file);
   });
   console.log("LS______");
-  fs.readdirSync("/").forEach(file => {
+  fs.readdirSync(event.body.cartella ?? "/var/task/src/node_modules").forEach(file => {
     console.log(file);
   });
 
