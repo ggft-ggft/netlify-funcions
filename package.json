@@ -20,6 +20,7 @@
     "cloudinary": "^1.25.0",
     "dotenv": "^8.2.0",
     "fabric": "^4.3.1",
+    "fonts": "file:fonts",
     "netlify-lambda": "^2.0.3",
     "npm-run-all": "^4.1.5",
     "path": "^0.12.7",
@@ -37,7 +38,6 @@
     "build:copy-lib3": "mv node_modules/canvas/build/Release/libpangoft2-1.0.so.0 node_modules/canvas/build/Release/libpangoft2-1.0.OLD",
     "build:copy-lib4": "cp ./canvasAMI/build/Release/libpangoft2-1.0.so.0 node_modules/canvas/build/Release/",
     "build:copy-lib": "cp ./fonts/* node_modules"
-    
   },
   "devDependencies": {
     "copy-webpack-plugin": "6.2.1",
