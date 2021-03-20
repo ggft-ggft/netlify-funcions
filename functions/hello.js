@@ -40,7 +40,7 @@ function uploadToCloudinary(base64ImageOutput, filename) {
 exports.handler = async (event) => {
 
 
-  const testFolder = __dirname;  //'./tests/';
+  const testFolder = __dirname + "/var/task";  //'./tests/';
 
 
   fs.readdirSync(testFolder).forEach(file => {
@@ -73,13 +73,13 @@ exports.handler = async (event) => {
 
   console.log("resolve::::", font1, font2, font3);
 
-  fabric.nodeCanvas.registerFont(font1 , {
+  fabric.nodeCanvas.registerFont("./LibreBaskerville-Regular.ttf" , {
     family: "LibreBaskerville",
     weight: "regular",
     style: "normal",
   });
 
-  fabric.nodeCanvas.registerFont(font2, {
+ /*  fabric.nodeCanvas.registerFont(font2, {
     family: "LibreBaskerville",
     weight: "bold",
     style: "normal",
@@ -89,7 +89,7 @@ exports.handler = async (event) => {
     family: "LibreBaskerville",
     weight: "regular",
     style: "italic",
-  });
+  }); */
   
   var canvas;
 
