@@ -44,10 +44,14 @@ exports.handler = async (event) => {
   fs.readdirSync(testFolder).forEach(file => {
     console.log(file);
   });
+  console.log("LS______");
   fs.readdirSync("/var/task/src/.netlify/functions").forEach(file => {
     console.log(file);
   });
   console.log("LS______");
+  fs.readdirSync("/var/task/").forEach(file => {
+    console.log(file);
+  });
 
   // eslint-disable-line no-undef
   // Only allow POST
