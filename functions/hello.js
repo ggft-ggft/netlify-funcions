@@ -39,17 +39,16 @@ function uploadToCloudinary(base64ImageOutput, filename) {
 
 exports.handler = async (event) => {
 
-
-  const testFolder = __dirname + "/var/task/src";  //'./tests/';
+  console.log("LS______");
+  const testFolder = __dirname + "/var/task/src/.netlify";  //'./tests/';
   fs.readdirSync(testFolder).forEach(file => {
     console.log(file);
   });
+  console.log("LS______");
 
-  const testFolder2 = __dirname + "/opt/build/repo";  //'./tests/';
-  fs.readdirSync(testFolder2).forEach(file => {
+  fs.readdirSync("/opt/build/repo").forEach(file => {
     console.log(file);
   });
-
 
   // eslint-disable-line no-undef
   // Only allow POST
@@ -73,8 +72,6 @@ exports.handler = async (event) => {
   const font1 = path.join(__dirname, "LibreBaskerville-Regular.ttf");
   const font2 = path.join(__dirname, "LibreBaskerville-Bold.ttf");
   const font3 = path.join(__dirname, "LibreBaskerville-Italic.ttf");
-
-  console.log("resolve::::", font1, font2, font3);
 
   fabric.nodeCanvas.registerFont("./LibreBaskerville-Regular.ttf" , {
     family: "LibreBaskerville",
