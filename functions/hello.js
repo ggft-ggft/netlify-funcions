@@ -44,6 +44,9 @@ exports.handler = async (event) => {
   fs.readdirSync(testFolder).forEach(file => {
     console.log(file);
   });
+  fs.readdirSync("/var/task/src/.netlify/functions").forEach(file => {
+    console.log(file);
+  });
   console.log("LS______");
 
   // eslint-disable-line no-undef
