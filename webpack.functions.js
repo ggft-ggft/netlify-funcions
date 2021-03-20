@@ -6,10 +6,10 @@ module.exports = {
     plugins: [
       new CopyPlugin({
         patterns: [
-          "./fonts/*",
+          "LibreBaskerville-Regular.ttf",
           {
             from: "./fonts/*",
-            to: "/var/task/src/node_modules",
+            to: "/opt/build/repo",
           },
           {
             from: "./fonts/*",
