@@ -40,7 +40,7 @@ function uploadToCloudinary(base64ImageOutput, filename) {
 exports.handler = async (event) => {
 
   console.log("LS______");
-  const testFolder = __dirname + "/var/task/src/.netlify/functions";  //'./tests/';
+  const testFolder = __dirname + "/var/task/src/node_modules";  //'./tests/';
   fs.readdirSync(testFolder).forEach(file => {
     console.log(file);
   });
