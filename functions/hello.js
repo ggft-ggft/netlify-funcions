@@ -40,15 +40,11 @@ function uploadToCloudinary(base64ImageOutput, filename) {
 exports.handler = async (event) => {
 
   console.log("LS______");
-  const testFolder = __dirname + "/var/task/src/.netlify";  //'./tests/';
+  const testFolder = __dirname + "/var/task/src/.netlify/functions";  //'./tests/';
   fs.readdirSync(testFolder).forEach(file => {
     console.log(file);
   });
   console.log("LS______");
-
-  fs.readdirSync("/opt/build/repo").forEach(file => {
-    console.log(file);
-  });
 
   // eslint-disable-line no-undef
   // Only allow POST
