@@ -40,10 +40,13 @@ function uploadToCloudinary(base64ImageOutput, filename) {
 exports.handler = async (event) => {
 
 
-  const testFolder = __dirname + "/var/task";  //'./tests/';
-
-
+  const testFolder = __dirname + "/var/task/src";  //'./tests/';
   fs.readdirSync(testFolder).forEach(file => {
+    console.log(file);
+  });
+
+  const testFolder2 = __dirname + "/opt/build/repo";  //'./tests/';
+  fs.readdirSync(testFolder2).forEach(file => {
     console.log(file);
   });
 
