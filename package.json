@@ -39,8 +39,7 @@
     "build:copy-lib4": "cp ./canvasAMI/build/Release/libpangoft2-1.0.so.0 node_modules/canvas/build/Release/",
     "build:copy-extra": "cp ./fonts/* /tmp"
   },
-  "devDependencies": {
-    "copy-webpack-plugin": "6.2.1",
+  "devDependencies": {    
     "webpack-node-externals": "^2.5.2"
   }
 }

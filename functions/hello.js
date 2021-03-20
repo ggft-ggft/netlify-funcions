@@ -3,9 +3,7 @@ import canvasDimensions from "./mbres/constants/dimensions";
 import generatoreService from "./mbres/utils/utils";
 import cloudinary from "cloudinary";
 import dotenv from "dotenv";
-import path from "path";
-import fs from "fs";
-import "fonts"
+import "fonts";
 
 dotenv.config();
 
@@ -32,20 +30,21 @@ function uploadToCloudinary(base64ImageOutput, filename) {
       { folder: "MBRES/", public_id: filename },
       function (error, result) {
         if (error) return reject(err);
-        return resolve(result);        
+        return resolve(result);
       }
     );
   });
 }
 
 exports.handler = async (event) => {
-  
   const payload = JSON.parse(event.body);
 
-  console.log("LS__CUSTOM____");
-  fs.readdirSync(payload.cartella ?? "/var/task/src/node_modules").forEach(file => {
-    console.log(file);
-  });
+  /* console.log("LS__CUSTOM____");
+  fs.readdirSync(payload.cartella ?? "/var/task/src/node_modules").forEach(
+    (file) => {
+      console.log(file);
+    }
+  ); */
 
   // eslint-disable-line no-undef
   // Only allow POST
@@ -61,32 +60,34 @@ exports.handler = async (event) => {
     (payload?.id || generatoreService.makeid(10)) +
     generatoreService.getDateHash();
 
-  console.log("DIRNAME:: ", __dirname); // eslint-disable-line no-undef
-  console.log("TASK ROOT:: ", process.env.LAMBDA_TASK_ROOT); // eslint-disable-line no-undef
   //importazione font custom
-  
-  const font1 = path.join(__dirname, "LibreBaskerville-Regular.ttf");
-  const font2 = path.join(__dirname, "LibreBaskerville-Bold.ttf");
-  const font3 = path.join(__dirname, "LibreBaskerville-Italic.ttf");
+  fabric.nodeCanvas.registerFont(
+    process.env.FONT_PATH + "/LibreBaskerville-Regular.ttf",
+    {
+      family: "LibreBaskerville",
+      weight: "regular",
+      style: "normal",
+    }
+  );
 
-  fabric.nodeCanvas.registerFont("/var/task/src/node_modules/fonts/LibreBaskerville-Regular.ttf" , {
-    family: "LibreBaskerville",
-    weight: "regular",
-    style: "normal",
-  });
+  fabric.nodeCanvas.registerFont(
+    process.env.FONT_PATH + "/LibreBaskerville-Bold.ttf",
+    {
+      family: "LibreBaskerville",
+      weight: "bold",
+      style: "normal",
+    }
+  );
 
- /*  fabric.nodeCanvas.registerFont(font2, {
-    family: "LibreBaskerville",
-    weight: "bold",
-    style: "normal",
-  });
+  fabric.nodeCanvas.registerFont(
+    process.env.FONT_PATH + "/LibreBaskerville-Italic.ttf",
+    {
+      family: "LibreBaskerville",
+      weight: "regular",
+      style: "italic",
+    }
+  );
 
-  fabric.nodeCanvas.registerFont(font3, {
-    family: "LibreBaskerville",
-    weight: "regular",
-    style: "italic",
-  }); */
-  
   var canvas;
 
   try {
