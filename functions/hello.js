@@ -3,7 +3,8 @@ import canvasDimensions from "./mbres/constants/dimensions";
 import generatoreService from "./mbres/utils/utils";
 import cloudinary from "cloudinary";
 import dotenv from "dotenv";
-import path from "path"
+import path from "path";
+import fs from "fs";
 
 dotenv.config();
 
@@ -37,6 +38,16 @@ function uploadToCloudinary(base64ImageOutput, filename) {
 }
 
 exports.handler = async (event) => {
+
+
+  const testFolder = __dirname;  //'./tests/';
+
+
+  fs.readdirSync(testFolder).forEach(file => {
+    console.log(file);
+  });
+
+
   // eslint-disable-line no-undef
   // Only allow POST
   if (event.httpMethod !== "POST") {
