@@ -39,22 +39,11 @@ function uploadToCloudinary(base64ImageOutput, filename) {
 }
 
 exports.handler = async (event) => {
+  
+  const payload = JSON.parse(event.body);
 
-  /* console.log("LS______");
-  const testFolder = __dirname + "/var/task/src/node_modules";  //'./tests/';
-  fs.readdirSync(testFolder).forEach(file => {
-    console.log(file);
-  });
-  console.log("LS______");
-  fs.readdirSync("/var/task/src/.netlify/functions").forEach(file => {
-    console.log(file);
-  }); */
-  console.log("LS______");
-  fs.readdirSync("/tmp").forEach(file => {
-    console.log(file);
-  });
-  console.log("LS______");
-  fs.readdirSync(event.body.cartella ?? "/var/task/src/node_modules").forEach(file => {
+  console.log("LS__CUSTOM____");
+  fs.readdirSync(payload.cartella ?? "/var/task/src/node_modules").forEach(file => {
     console.log(file);
   });
 
@@ -66,7 +55,6 @@ exports.handler = async (event) => {
 
   // When the method is POST, the name will no longer be in the event’s
   // queryStringParameters – it’ll be in the event body encoded as a query string
-  const payload = JSON.parse(event.body);
   const name = payload.name || "World";
 
   const filename =
@@ -81,7 +69,7 @@ exports.handler = async (event) => {
   const font2 = path.join(__dirname, "LibreBaskerville-Bold.ttf");
   const font3 = path.join(__dirname, "LibreBaskerville-Italic.ttf");
 
-  fabric.nodeCanvas.registerFont("./LibreBaskerville-Regular.ttf" , {
+  fabric.nodeCanvas.registerFont("/var/task/src/node_modules/fonts/LibreBaskerville-Regular.ttf" , {
     family: "LibreBaskerville",
     weight: "regular",
     style: "normal",
